@@ -8,7 +8,7 @@ export default function Home() {
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
         <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href={`/dashboard`}
+          href={`/login`}
           rel="noopener noreferrer"
         >
           <Image
@@ -18,7 +18,7 @@ export default function Home() {
             width={16}
             height={16}
           />
-          Go to Dashboard
+          Go to Login
         </Link>
     </div>
   );
