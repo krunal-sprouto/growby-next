@@ -10,10 +10,10 @@ export default function DashboardPage() {
   return (
     <div>
       <div className="flex justify-between items-center mb-8">
-        <h1 className={theme === 'dark' ? 'text-2xl font-bold text-white' : 'text-2xl font-bold text-gary-800'}>{t('dashboard')}</h1>
+        <h1 className={theme === 'dark' ? 'text-lg lg:text-2xl font-bold text-white' : 'text-lg lg:text-2xl font-bold text-gary-800'}>{t('dashboard')}</h1>
         <a
           href="#"
-          className="inline-flex items-center gap-2 bg-emerald-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-emerald-600 transition-colors"
+          className="inline-flex items-center gap-2 bg-emerald-500 text-white px-2 lg:px-4 py-2 rounded-md font-semibold hover:bg-emerald-600 transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ export default function DashboardPage() {
           <div className="text-sm text-gray-400">Auto-recharge at $10</div>
         </div>
       </div>
-      <div className={theme === 'dark' ? "bg-gray-800 p-4 border border-gray-800 rounded-2xl mb-8" : "bg-white p-4 border border-gray-300 rounded-2xl mb-8"}>
+      <div className={theme === 'dark' ? "bg-gray-800 grid p-4 border border-gray-800 rounded-2xl mb-8" : "bg-white grid p-4 border border-gray-300 rounded-2xl mb-8"}>
         <div className="flex justify-between items-center mb-2">
           <h2 className={theme === 'dark' ? "font-semibold text-white" : "font-semibold text-gray-800"}>Recent Activity</h2>
           <a href="#" className="text-emerald-400 hover:underline">

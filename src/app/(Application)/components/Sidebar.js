@@ -61,7 +61,7 @@ export default function Sidebar({ collapsed, setCollapsed }) {
 
   return (
     <>
-      <aside className={`sidebar min-h-screen fixed top-0 left-0 z-20 flex flex-col ${collapsed ? 'w-16' : 'w-64'} ${theme === 'dark' ? 'bg-gray-900 text-white border-r border-gray-700' : 'bg-white text-gray-800'} shadow-lg`}>
+      <aside className={`sidebar min-h-screen h-full fixed top-0 left-0 z-30 flex flex-col ${collapsed ? 'w-16' : 'w-64'} ${theme === 'dark' ? 'bg-gray-900 text-white border-r border-gray-700' : 'bg-white text-gray-800'} shadow-lg`}>
         <div className="sidebar-header flex items-center justify-between p-4">
           <Link href={`/dashboard`} className="logo" aria-label="Growby Home" as={'dashboard'}>
             <Image
@@ -75,7 +75,7 @@ export default function Sidebar({ collapsed, setCollapsed }) {
           </Link>
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className="ml-2 text-gray-400 hover:text-brand-green"
+            className="ml-2 text-gray-400 hover:text-brand-green cursor-pointer"
             aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
           >
             <AlignLeft
@@ -95,15 +95,14 @@ export default function Sidebar({ collapsed, setCollapsed }) {
                     <li key={link.href} className='my-1 mx-1'>
                       <Link
                         href={link.href}
-                        className={`flex items-center gap-3 px-4 py-2 rounded-md hover:bg-gray-800 ${
-                          isActive(link.href)
-                            ? 'bg-brand-green-dim text-brand-green font-semibold'
+                        className={`flex items-center gap-3 px-4 py-2 rounded-md
+                          ${isActive(link.href)
+                            ? 'bg-gray-800 text-white'
                             : theme === 'dark'
-                              ? 'text-white hover:text-white'
-                              : 'text-gray-800 hover:text-white'
-                        }
-                        ${collapsed ? 'justify-center' : 'justify-start'}`
-                      }
+                              ? 'hover:bg-gray-800 text-white hover:text-white'
+                              : 'hover:bg-gray-800 text-gray-800 hover:text-white'}
+                          ${collapsed ? 'justify-center' : 'justify-start'}
+                        `}
                       >
                         <IconComponent size={20} className="flex-shrink-0" />
                         {!collapsed && <span>{t(link.label)}</span>}
@@ -118,7 +117,7 @@ export default function Sidebar({ collapsed, setCollapsed }) {
       </aside>
       {/* Overlay for mobile only, show when sidebar is open and screen is small */}
       <div
-        className={`sidebar-overlay fixed inset-0 bg-black/50 z-10 ${collapsed ? 'hidden' : 'block'} md:hidden`}
+        className={`sidebar-overlay fixed inset-0 bg-black/50 z-20 ${collapsed ? 'hidden' : 'block'} md:hidden`}
         onClick={() => setCollapsed(true)}
         aria-hidden="true"
       ></div>
