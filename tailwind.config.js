@@ -6,17 +6,17 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-      },
       colors: {
-        'brand-green': '#10B981',
-        'brand-green-dim': 'rgba(16, 185, 129, 0.1)',
-        'status-red': '#EF4444',
-        'status-red-dim': 'rgba(239, 68, 68, 0.1)',
-        'status-yellow': '#F59E0B',
-        'status-yellow-dim': 'rgba(245, 158, 11, 0.1)',
-      }
+        primary: '#1DA1F2',
+        secondary: '#14171A',
+        accent: '#657786',
+        background: '#F5F8FA',
+        text: '#14171A',
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        mono: ['Geist Mono', 'monospace'],
+      },
     },
   },
   plugins: [],

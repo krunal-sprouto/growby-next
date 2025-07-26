@@ -1,10 +1,13 @@
 // next-intl.config.js
 export default {
-  locales: ['en'],
+  locales: ['en','fr','es'],
   defaultLocale: 'en',
-  localeDetection: true,
+  localePath: './messages',
+  localeDetection: false,
   messages: {
-    en: () => import('./locales/en.json')
+    en: () => import('./messages/en.json'),
+    fr: () => import('./messages/fr.json'),
+    es: () => import('./messages/es.json'),
   },
 };
   
